@@ -7,6 +7,8 @@ import ConnectForm from "../features/connect/ConnectForm";
 import Button from "./Button";
 import HeaderNavStyledNavLink from "./HeaderNavStyledNavLink";
 import { useEffect } from "react";
+import SlidingWindow from "./SlidingWindow";
+import ConnectWindow from "./ConnectWindow";
 
 const StyledList = styled.ul.attrs({ className: "nav-ul" })`
   list-style: none;
@@ -80,6 +82,18 @@ function HeaderNav() {
           </Modal.Window>
         </Modal>
       </li>
+      {/* <li className="modal-form-nav-link">
+        <SlidingWindow>
+          <SlidingWindow.Open opens="connect-window">
+            <Button variation="link" size="extraSmall">
+              Open Connect Window
+            </Button>
+          </SlidingWindow.Open>
+          <SlidingWindow.Window name="connect-window">
+            <ConnectWindow />
+          </SlidingWindow.Window>
+        </SlidingWindow>
+      </li> */}
       <li>
         <HeaderNavStyledNavLink
           target="_blank"

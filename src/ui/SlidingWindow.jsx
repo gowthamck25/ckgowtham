@@ -51,9 +51,3 @@ function Window({ children }) {
 SlidingWindow.Open = Open;
 SlidingWindow.Window = Window;
 export default SlidingWindow;
-
-// {
-//   props: {
-//     ref,
-//   },
-// }

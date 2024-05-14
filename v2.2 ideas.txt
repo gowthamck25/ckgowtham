@@ -1,6 +1,6 @@
-v1
-- Idea is to add active class to header links
 v2
+- Improve modal connect display
+- Add intersection observer api when clicked on menu card in work page
 - Form validation
 - When hovered on ProviderItem link inside it also should get certain css
 - Create Filter Feature for Project and Mini Projects
