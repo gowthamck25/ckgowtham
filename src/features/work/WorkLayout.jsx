@@ -12,7 +12,6 @@ const StyledWorkLayout = styled.div.attrs({ className: "work-layout" })`
   display: grid;
   grid-template-columns: 30rem 1fr;
   height: 100vh;
-  position: relative;
 
   @media (max-width: 65rem) {
     display: flex;
@@ -72,8 +71,7 @@ function WorkLayout() {
         value={{
           isOpen,
           setIsOpen,
-          parentClass: ".work-layout",
-          additionalParentClass: "sidebar-open",
+          className: "sidebar-open",
         }}
       >
         <StyledWorkLayout>

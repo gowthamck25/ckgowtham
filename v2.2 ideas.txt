@@ -8,4 +8,6 @@ v2
 - Implement a new project details page.
 - Implement a functionality to pin projects on top 
 
-Difficulties faced:
+Notes:
+
+2

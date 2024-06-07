@@ -138,6 +138,7 @@ body {
   line-height: 1.5;
   font-size: 1.6rem;
   overflow-x: hidden;
+  position: relative;
 }
 
 input,
@@ -248,6 +249,14 @@ img {
   .sticky .section-home {
     margin-top: 9.3rem;
   }
+
+  // Connect Form Display
+  .connect-window-open .connect-window-overlay {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateY(0);
+   }
 `;
 
 // Font sizes (px):

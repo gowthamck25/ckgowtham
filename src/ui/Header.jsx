@@ -17,7 +17,6 @@ const StyledHeader = styled.header.attrs({
   align-items: center;
   justify-content: space-between;
   padding: 2.4rem 4.8rem;
-  position: relative;
 
   @media (max-width: 65em) {
     padding: 2rem 4rem;
@@ -54,8 +53,7 @@ function Header() {
       value={{
         isOpen,
         setIsOpen,
-        parentClass: ".header",
-        additionalParentClass: "nav-open",
+        className: "nav-open",
       }}
     >
       <StyledHeader>

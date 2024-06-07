@@ -1,8 +1,6 @@
 import { cloneElement, createContext, useContext, useEffect } from "react";
 import { OpenWindowContext as HeaderOpenWindowContext } from "./Header";
 import { OpenWindowContext as WorkLayoutOpenWindowContext } from "../features/work/WorkLayout";
-import { ConnectContext as ConnectWindowContext } from "./HeaderNav";
-import { createPortal } from "react-dom";
 
 const SlidingWindowContext = createContext();
 
@@ -19,9 +17,9 @@ function Open({ children, opens: opensName }) {
   if (opensName === "mobile-nav") OpenWindowContext = HeaderOpenWindowContext;
   if (opensName === "sidebar-nav")
     OpenWindowContext = WorkLayoutOpenWindowContext;
-  if (opensName === "connect-window") OpenWindowContext = ConnectWindowContext;
 
-  const { isOpen, setIsOpen, className } = useContext(OpenWindowContext);
+  const { isOpen, setIsOpen, parentClass, additionalParentClass } =
+    useContext(OpenWindowContext);
 
   function handleClick() {
     setIsOpen((isOpen) => !isOpen);
@@ -30,10 +28,15 @@ function Open({ children, opens: opensName }) {
   useEffect(
     function () {
       if (isOpen) {
-        document.body.classList.add(className);
-      } else document.body.classList.remove(className);
+        document
+          .querySelector(parentClass)
+          .classList.add(additionalParentClass);
+      } else
+        document
+          .querySelector(parentClass)
+          .classList.remove(additionalParentClass);
     },
-    [isOpen, className]
+    [isOpen, additionalParentClass, parentClass]
   );
 
   if (!children) return null;
@@ -42,7 +45,7 @@ function Open({ children, opens: opensName }) {
 }
 
 function Window({ children }) {
-  return createPortal(cloneElement(children), document.body);
+  return cloneElement(children);
 }
 
 SlidingWindow.Open = Open;
